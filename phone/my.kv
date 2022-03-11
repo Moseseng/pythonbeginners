@@ -1,0 +1,120 @@
+WindowManager:
+    MainWindow:
+    SecondScreen:
+    Error1:
+    Python6:
+    Python5:
+    Python4:
+    Python3:
+    Python2:
+    Python1:
+    
+
+<MainWindow>:
+    name: "main"
+    GridLayout:
+        cols:1
+        GridLayout:
+            rows:4
+            Image:
+                source: 'logo3.png'
+            Label:
+                text: 'Leran Coding'
+                font_size: 22
+            Label:
+                text: 'plase enter password'
+                size_hint: (0.1,0.3)  
+            TextInput:
+                id: passw
+                text:'Enter Your Password'
+                multiline: False
+                
+                size_hint:(0.1,0.3)
+        Button:
+            text: 'LOGIN'
+            size_hint:(0.1,0.1)
+            on_release:
+                app.root.current='SECOND' if passw.text =="moses" else "error"
+                root.manager.transition.direction = "up"
+<SecondScreen>:
+    name: 'SECOND'
+    GridLayout:
+        cols: 1
+        GridLayout:
+            rows:2
+            Image:
+                source: 'logo4.png'
+            Label:
+                text: 'hi mother fucker'
+        GridLayout:
+            cols:2
+            rows:3
+            Button:
+                text: "python6"
+                size_hint: (0.1,0.1)
+                on_release:
+                    app.root.current='python6'
+                    root.manager.transition.direction = "left"
+            Button:
+                text: "python5"
+                size_hint: (0.1,0.1)
+            Button:
+                text: "python4"
+                size_hint: (0.1,0.1)
+            Button:
+                text: "python3"
+                size_hint: (0.1,0.1)
+            Button:
+                text: "python2"
+                size_hint: (0.1,0.1)
+            Button:
+                text: "python1"
+                size_hint: (0.1,0.1)       
+        Button:
+            text: 'Go Back'
+            size_hint: (0.1,0.3)
+            on_release:
+                app.root.current="main"
+                root.manager.transition.direction = "down"
+
+<Error1>:
+    name:'error'
+    GridLayout:
+        cols:1
+        rows:3
+        Image:
+            source:'logo4.png'
+        Label:
+            text: 'passowrd encorect'
+        Button:
+            text: 'try agani'
+            size_hint: (0.1,0.3)
+            on_release:
+                app.root.current="main"
+                root.manager.transition.direction = "down"
+
+
+
+<Python6>:
+    name:'python6'
+    GridLayout:
+        cols:1
+        rows:2
+        Image:
+            source:'logo6.png'
+        Label:
+            text: 'learn python'
+        Button:
+            text: 'back'
+            size_hint: (0.1,0.1)
+            on_release:
+                app.root.current='SECOND'
+                root.manager.transition.direction = "down"
+
+<Python5>:
+<Python4>:
+<Python3>:
+<Python2>:
+<Python1>:
+
+            
